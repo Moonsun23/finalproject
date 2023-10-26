@@ -1,6 +1,7 @@
 package global.moonsun23.finalproject.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -13,7 +14,6 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 
 public class Library {
 
@@ -37,8 +37,9 @@ public class Library {
     private String lat;
     private String lon;
 
-    @CreatedDate     // jpa, 레코드 생성시 해당값 자동입력
-    @Column(insertable = false, updatable = false)  // insert문을 만들 때, update 할때 얘는 빼라고 써주는 것 = 입력,수정 시 해당컬럼 제외하고 sql문 생성
+    // @CreatedDate
+    @CreationTimestamp     // jpa, 레코드 생성시 해당값 자동입력
+    //@Column(insertable = false, updatable = false)  // insert문을 만들 때, update 할때 얘는 빼라고 써주는 것 = 입력,수정 시 해당컬럼 제외하고 sql문 생성
     private LocalDateTime regdate;
 
 }
