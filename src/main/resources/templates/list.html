@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>도서관 정보조회</title>
+</head>
+<body>
+<h1>도서관 정보조회</h1>
+
+<table style="width: 750px">
+    <tr><th>도서관명</th><th>시도</th><th>구군</th>
+        <th>도서관유형</th><th>전화번호</th><th>휴관일</th></tr>
+
+    <tr th:each="lib: ${libs}">
+        <td th:text="${lib.lbname}">도서관명</td>
+        <td th:text="${lib.sido}">시도</td>
+        <td th:text="${lib.gugun}">구군</td>
+        <td th:text="${lib.lbtype}">도서관유형</td>
+        <td th:text="${lib.phone}">전화번호</td>
+        <td th:text="${lib.clsday}">휴관일</td>
+    </tr>
+</table>
+
+</body>
+</html>
